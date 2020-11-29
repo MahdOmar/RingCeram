@@ -44,13 +44,12 @@ class AchatController extends Controller
               if($product->count() == 0){
                   $error='Product does not exist in stock';
                   return view('Vente.create',['error' => $error]);
-                ;
               }
-/*
+              
               else{
                   if($product->Quantity < request('Quantity'))
                   {
-                    return view('Vente.update',['error' => 'Sale Quantity is sup than Stock Quantity']);
+                    return view('Vente.create',['error' => 'Sale Quantity is sup than Stock Quantity']);
                   }
                   else{
                     $sale->product_id = $product->id;  
@@ -64,7 +63,7 @@ class AchatController extends Controller
                   }
 
 
-              }*/
+              }
 
 
          
