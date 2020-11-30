@@ -24,14 +24,18 @@ class AchatController extends Controller
       
           
           public function create(){
-              return view('Vente.create',['error' => '']);
+            $names = Product::distinct()->orderBy('Designation', 'ASC')->get(['Designation']);
+
+
+
+              return view('Vente.create',['error' => '','names' => $names]);
           }
       
       
           public function store(){
       
               $sale = new Achat();
-             
+              $names = Product::distinct()->get(['Designation']);
       
               
 
@@ -40,14 +44,14 @@ class AchatController extends Controller
              
               if($product->count() == 0){
                   $error='Product does not exist in stock';
-                  return view('Vente.create',['error' => $error]);
+                  return view('Vente.create',['error' => $error,'names' => $names]);
               }
               
               else{
               
                   if($product[0]->Quantity < request('Quantity'))
                   {
-                    return view('Vente.create',['error' => 'Sale Quantity is sup than Stock Quantity']);
+                    return view('Vente.create',['error' => 'Sale Quantity is sup than Stock Quantity','names' => $names]);
                   }
                   else{
                     $sale->product_id = $product[0]->id;  

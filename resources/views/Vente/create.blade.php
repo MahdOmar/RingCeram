@@ -11,7 +11,16 @@
                 @csrf
                
                 <label for="name">Designation:</label>
-                <input type="text" id="name" name="name"><br>
+               
+                <select name="name" id="name">
+                      @foreach ($names as $name )
+                      <option value="{{ $name->Designation }}">{{ $name->Designation }}</option>
+                    
+                   
+               @endforeach
+                       
+                </select><br>
+
                 <label for="type">Type:</label>
                 <select name="type" id="type">
                         <option value="F">Foncé</option>
