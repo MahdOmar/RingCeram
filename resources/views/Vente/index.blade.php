@@ -37,7 +37,7 @@
               <form action="/sales/{{ $sale->id }}" method="POST" style="display: inline" >
                 @csrf
                 @method('DELETE')
-                <button onclick="return confirm('Are you sure?')" class="btn btn-danger" disabled>Delete</button>
+                <button onclick="return confirm('Are you sure?')" class="btn btn-danger" >Delete</button>
         </form>
               
           </tr>

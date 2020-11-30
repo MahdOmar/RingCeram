@@ -53,6 +53,13 @@ class AchatController extends Controller
                   {
                     return view('Vente.create',['error' => 'Sale Quantity is sup than Stock Quantity','names' => $names]);
                   }
+
+                  elseif(request('Quantity') == 0)
+                  {
+                    return view('Vente.create',['error' => 'Sale Quantity is 0','names' => $names]);
+                  
+                  }
+
                   else{
                     $sale->product_id = $product[0]->id;  
                     $sale->Quantity = request('Quantity');

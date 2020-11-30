@@ -1,5 +1,6 @@
 body {
     font-family: 'Nunito';
+    
 }
 
 nav{
@@ -109,9 +110,8 @@ img{
     margin: 2px;
     margin-top: 10px;
 }
-fieldset{
-    margin-bottom: 50px;
-}
+
+
 input[type=submit]{
     width: 100% !important;
     margin: auto !important;
@@ -120,6 +120,9 @@ input[type=submit]{
     color: #eee;
     border-radius: 5px;
 
+}
+.table tr td,option,select{
+    text-transform: capitalize;
 }
 
 
