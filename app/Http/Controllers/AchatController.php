@@ -9,8 +9,17 @@ use Illuminate\Support\Facades\DB;
 
 class AchatController extends Controller
 {
+
+  
+  public function __construct(){
+    $this->middleware('auth');
+  }
+
+
+
     public function index(){
  
+
       /*  $sales = Achat::join('products','achats.product_id','=','products.id')
         ->select('achats.id','products.Designation','products.Type','achats.Quantity','achats.Amount','achats.created_at')
         ->get();*/

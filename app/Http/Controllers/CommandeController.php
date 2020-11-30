@@ -7,6 +7,9 @@ use App\Models\Commande;
 
 class CommandeController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+      }
 
     public function index(){
      

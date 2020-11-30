@@ -11,22 +11,22 @@
                 @csrf
 
                 <label for="nm">Name:</label>
-                <input type="text" id="nm" name="name"><br>
+                <input type="text" id="nm" name="name" required><br>
 
                 <label for="phone">Phone:</label>
-                <input type="text" id="phone" name="phone" pattern="[0-9]+" minlength="10" maxlength="10"><br>
+                <input type="text" id="phone" name="phone" pattern="[0-9]+" minlength="10" maxlength="10" required><br>
 
                 <label for="name">Designation:</label>
-                <input type="text" id="name" name="des"><br>
+                <input type="text" id="name" name="des" required><br>
                 <label for="type">Type</label>
-                <select name="type" id="type">
+                <select name="type" id="type" required>
                         <option value="F">Foncé</option>
                         <option value="C">Claire</option>
                         <option value="X">None</option>
                        
                 </select><br>
-                <label for="Quantity">Quantity</label>
-                <input type="number" name="Quantity" id="Quantity">
+                <label for="Quantity" >Quantity</label>
+                <input type="number" name="Quantity" id="Quantity" required>
                        
                 <br>
                

@@ -23,7 +23,7 @@ Route::get('/', function () {
 Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/create',[ProductController::class, 'create']);
 Route::post('/products/update/{id}',[ProductController::class, 'update']);
-Route::get('/products/update/{id}',[ProductController::class, 'showData']  );
+Route::get('/products/update/{id}',[ProductController::class, 'showData']);
 Route::post('/products',[ProductController::class, 'store']);
 Route::delete('/products/{id}',[ProductController::class, 'destroy']);
 

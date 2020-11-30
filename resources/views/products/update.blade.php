@@ -10,9 +10,9 @@
         <form action="/products/update/{{$product->id}}" method="POST">
                 @csrf
                 <label for="name">Designation:</label>
-                <input type="text" id="name" name="name" value="{{ $product->Designation }}"><br>
+                <input type="text" id="name" name="name" value="{{ $product->Designation }}" required><br>
                 <label for="type">Type:</label>
-                <select name="type" id="type" >
+                <select name="type" id="type" required>
                     @if( $product->Type  == 'F')
                     
                         <option value="F">Foncé</option>
@@ -35,15 +35,15 @@
                        
                 </select><br>
                 <label for="meter">Meter/K:</label>
-                <input type="number" name="meter" id="meter" step="0.01" value="{{ $product->meter }}"><br>
+                <input type="number" name="meter" id="meter" step="0.01" value="{{ $product->meter }}" required><br>
                 <label for="Quantity">Quantity:</label>
-                <input type="number" name="Quantity" id="Quantity" value="{{ $product->Quantity }}">
+                <input type="number" name="Quantity" id="Quantity" value="{{ $product->Quantity }}" required>
                        
                 <br>
                 <label for="price_a">Price_Achat:</label>
-                <input type="number" step="0.01" id="price_a" name="price_a" value="{{ $product->Price_A }}"><br>
+                <input type="number" step="0.01" id="price_a" name="price_a" value="{{ $product->Price_A }}" required><br>
                 <label for="price_v">Price_Vendre:</label>
-                <input type="number" step="0.01" id="price_v" name="price_v" value="{{ $product->Price_V }}"><br>
+                <input type="number" step="0.01" id="price_v" name="price_v" value="{{ $product->Price_V }}" required><br>
                
                 <input type="submit" value="Update Product">
                 

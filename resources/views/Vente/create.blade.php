@@ -29,11 +29,11 @@
                        
                 </select><br>
                 <label for="Quantity">Quantity:</label>
-                <input type="number" name="Quantity" id="Quantity">
+                <input type="number" name="Quantity" id="Quantity" required>
                        
                 <br>
                 <label for="price_a">Amount:</label>
-                <input type="number" step="0.01" id="amount" name="price_a"><br>
+                <input type="number" step="0.01" id="amount" name="price_a" required><br>
                 <p class="text-danger">{{ $error }}</p>
                
                 <input type="submit" value="Add Sale">
