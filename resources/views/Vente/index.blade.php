@@ -27,12 +27,12 @@
         <tbody>
           @foreach($sales as $sale)
           <tr>
-            <td>{{ $sale->Designation }}</td>
-            <td>{{ $sale->Type }}</td>
+            <td>{{ $sale->product->Designation }}</td>
+            <td>{{ $sale->product->Type }}</td>
             <td>{{ $sale->Quantity }}</td>
             <td>{{ $sale->Amount }} DA</td>
             <td>{{ $sale->created_at->format('d/m/Y') }} </td>
-            <td> <a href="/sales/update/{{ $sale['id'] }}" class="btn btn-secondary text-white" role="button" >Update</a>
+            <td> <a href="/sales/update/{{ $sale->id }}" class="btn btn-secondary text-white" role="button" >Update</a>
               <form action="/sales/{{ $sale->id }}" method="POST" style="display: inline" >
                 @csrf
                 @method('DELETE')
