@@ -10,6 +10,7 @@
         <a href="/sales/create" class="btn btn-primary btn-sm m-2 p-4 text-white" role="button" >Add sale</a>
      </div>  
        
+     <h3 class="text-center mb-4">Total: {{ $total }} DA</h3>
 
   
        <table class="table table-dark table-hover">
@@ -36,7 +37,7 @@
               <form action="/sales/{{ $sale->id }}" method="POST" style="display: inline" >
                 @csrf
                 @method('DELETE')
-                <button onclick="return confirm('Are you sure?')" class="btn btn-danger">Delete</button>
+                <button onclick="return confirm('Are you sure?')" class="btn btn-danger" disabled>Delete</button>
         </form>
               
           </tr>

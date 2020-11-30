@@ -16,9 +16,10 @@ class AchatController extends Controller
         ->get();*/
         
         $sales = Achat::with('product')->get();
+        $total = $sales->sum('Amount');
         
             
-              return view('Vente.index',['sales' => $sales]);
+              return view('Vente.index',['sales' => $sales,'total' => $total]);
           }
       
           
@@ -43,7 +44,7 @@ class AchatController extends Controller
               }
               
               else{
-               $q=$product[0]->Quantity;
+              
                   if($product[0]->Quantity < request('Quantity'))
                   {
                     return view('Vente.create',['error' => 'Sale Quantity is sup than Stock Quantity']);
@@ -72,20 +73,43 @@ class AchatController extends Controller
  
           public function showData($id){
              $sale = Achat::find($id);
-             return view('Vente.update',['sale' => $sale]);
+            
+             return view('Vente.update',['sale' => $sale,'error' =>'']);
           }
  
           public function update($id){
  
-              $sale = Achat::findOrfail($id);
+              $sale = Achat::with('product')->findOrfail($id);
+
+             $product = Product::where('Designation',request('name'))->where('Type',request('type'))->get();
               
-              $sale->Designation = request('name');
-              $sale->Type = request('type');    
-              $sale->Quantity =request('Quantity');
-              $sale->Amount = request('price_a');
-              $sale->save();
-              return redirect('/sales');
- 
+             if($product[0]->Quantity < request('Quantity'))
+             {
+               return view('Vente.update',['error' => 'Sale Quantity is greater than Stock Quantity',
+               'sale' => $sale]);
+             }
+
+             else{
+
+
+                $sale->product_id = $product[0]->id;  
+                $product[0]->Quantity = $product[0]->Quantity + $sale->Quantity - request('Quantity') ;
+                $product[0]->save();
+                $sale->Quantity = request('Quantity');
+                $sale->Amount = request('price_a');
+                 
+
+                $sale->save();
+       
+  
+                return redirect('/sales');
+
+
+             }
+
+
+              
+           
           }
       
       

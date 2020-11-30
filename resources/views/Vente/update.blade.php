@@ -10,10 +10,10 @@
         <form action="/sales/update/{{$sale->id}}" method="POST">
                 @csrf
                 <label for="name">Designation:</label>
-                <input type="text" id="name" name="name" value="{{ $sale->Designation }}"><br>
+                <input type="text" id="name" name="name" value="{{ $sale->product->Designation }}"><br>
                 <label for="type">Type:</label>
                 <select name="type" id="type" >
-                    @if( $sale->Type  == 'F')
+                    @if( $sale->product->Type  == 'F')
                     
                         <option value="F">Foncé</option>
                         <option value="C">Claire</option>
@@ -41,7 +41,7 @@
                 <br>
                 <label for="price_a">Amount:</label>
                 <input type="number" step="0.01" id="amount" name="price_a" value="{{ $sale->Amount }}"><br>
-                
+                <p class="text-danger">{{ $error }}</p>
                
                 <input type="submit" value="Update Sale">
                 
