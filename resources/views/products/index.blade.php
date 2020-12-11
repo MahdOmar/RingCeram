@@ -17,7 +17,7 @@
           <tr>
             <th>Designation</th>
             <th>Type(F/C)</th>
-            <th>Meter/k</th>
+            <th>Meter/C</th>
             <th>Quantity</th>
             <th>Price_A</th>
             <th>Price_V</th>
