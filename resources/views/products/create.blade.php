@@ -21,7 +21,7 @@
                 <label for="meter">Meter/K:</label>
                 <input type="number" name="meter" id="meter" step="0.01" required><br>
                 <label for="Quantity">Quantity:</label>
-                <input type="number" name="Quantity" id="Quantity" required>
+                <input type="number" name="Quantity" step="0.01" id="Quantity" required>
                        
                 <br>
                 <label for="price_a">Price_Achat:</label>

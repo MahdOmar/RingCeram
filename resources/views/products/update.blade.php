@@ -37,7 +37,7 @@
                 <label for="meter">Meter/K:</label>
                 <input type="number" name="meter" id="meter" step="0.01" value="{{ $product->meter }}" required><br>
                 <label for="Quantity">Quantity:</label>
-                <input type="number" name="Quantity" id="Quantity" value="{{ $product->Quantity }}" required>
+                <input type="number" name="Quantity" step="0.01" id="Quantity" value="{{ $product->Quantity }}" required>
                        
                 <br>
                 <label for="price_a">Price_Achat:</label>

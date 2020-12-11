@@ -23,12 +23,24 @@ class AchatController extends Controller
       /*  $sales = Achat::join('products','achats.product_id','=','products.id')
         ->select('achats.id','products.Designation','products.Type','achats.Quantity','achats.Amount','achats.created_at')
         ->get();*/
+
+        if(is_null(request('date'))){
+          $sales = Achat::with('product')->get();
+          $total = $sales->sum('Amount');
+          
+              
+                return view('Vente.index',['sales' => $sales,'total' => $total]);
+
+        }
+        else{
+          if(request('date') == "lastW"){
+            $sales = Achat::with('product')->whereBetween('created_at',[Carbon::now()->subWeeks(1),Carbon::now()])->get();
+            $total = $sales->sum('Amount');
+            return view('Vente.index',['sales' => $sales,'total' => $total]);
+          }
+        }
         
-        $sales = Achat::with('product')->get();
-        $total = $sales->sum('Amount');
-        
-            
-              return view('Vente.index',['sales' => $sales,'total' => $total]);
+       
           }
       
           

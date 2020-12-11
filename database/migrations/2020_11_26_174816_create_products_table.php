@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('Designation');
             $table->string('Type');
-            $table->integer('Quantity');
+            $table->double('Quantity');
             $table->double('Price_A');
             $table->double('Price_V');
 

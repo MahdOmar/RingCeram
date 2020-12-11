@@ -38,8 +38,9 @@ Route::delete('/commandes/{id}',[CommandeController::class, 'destroy']);
 
 //Sales Routes
 Route::get('/sales', [AchatController::class, 'index']);
+Route::post('/sales', [AchatController::class, 'index']);
 Route::get('/sales/create',[AchatController::class, 'create']);
-Route::post('/sales',[AchatController::class, 'store']);
+Route::post('/sales/save',[AchatController::class, 'store']);
 Route::post('/sales/update/{id}',[AchatController::class, 'update']);
 Route::get('/sales/update/{id}',[AchatController::class, 'showData']  );
 Route::delete('/sales/{id}',[AchatController::class, 'destroy']);

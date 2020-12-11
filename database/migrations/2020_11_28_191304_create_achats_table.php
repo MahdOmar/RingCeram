@@ -16,7 +16,7 @@ class CreateAchatsTable extends Migration
         Schema::create('achats', function (Blueprint $table) {
             $table->id();
             $table->foreignId('product_id');
-            $table->integer('Quantity');
+            $table->double('Quantity');
             $table->double('Amount');
             $table->timestamps();
         });

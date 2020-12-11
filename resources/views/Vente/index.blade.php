@@ -9,9 +9,20 @@
         <input type="text" name="search" id="searchP" placeholder="search" onkeyup="searchProduct(event)">
         <a href="/sales/create" class="btn btn-primary btn-sm m-2 p-4 text-white" role="button" >Add sale</a>
      </div>  
-       
-     <h3 class="text-center mb-4">Total: {{ $total }} DA</h3>
-
+    
+     <div class="d-flex justify-content-between">
+       <form action="/sales" method="POST" class="d-flex">
+        @csrf
+       <label for=""> Date:</label>
+       <select name="date" id="date">
+         <option value="all">All</option>
+         <option value="lastW">Last week</option>
+         <option value="lastM">Last Month</option>
+       </select>
+       <input type="submit" value="Apply">
+      </form>
+     <h3 >Total: {{ $total }} DA</h3>
+    </div>
   
        <table class="table table-dark table-hover">
         <thead>

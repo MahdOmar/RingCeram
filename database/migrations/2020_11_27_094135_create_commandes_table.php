@@ -19,7 +19,7 @@ class CreateCommandesTable extends Migration
             $table->string('phone');
             $table->string('Designation');
             $table->string('Type');
-            $table->integer('Quantity');
+            $table->double('Quantity');
            
             $table->timestamps();
         });

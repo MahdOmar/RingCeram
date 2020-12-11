@@ -7,7 +7,7 @@
         <h1>Add Sale</h1>
 
        
-        <form action="/sales" method="POST">
+        <form action="/sales/save" method="POST">
                 @csrf
                
                 <label for="name">Designation:</label>
